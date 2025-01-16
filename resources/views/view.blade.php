@@ -14,7 +14,10 @@
     <div class="container mt-3">
         <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
             <h1>Details</h1>
-            <button id="del" type="button" class="btn btn-success">Download</button>
+            <div>
+                <button id="download" type="button" class="btn btn-success">Download</button>
+                <button id="back" type="button" class="btn btn-primary">Back</button>
+            </div>
         </div>         
         <table class="table table-bordered">
           <thead>
@@ -49,30 +52,15 @@
 
 </body>
 <script>
-    // $(document).ready(function() {
+    $(document).ready(function() {
 
-    //     $.ajax({
-    //         url: 'showdata',
-    //         type: 'GET',
-    //         success: function(res) {
-    //             let data = "";
-    //             res.forEach(data => {
-    //                 data +=`
-    //                 <tr align="center">
-    //                     <td>${data.uname}</td>
-    //                     <td>${data.phone_number}</td>
-    //                     <td>${data.gmail}</td>
-    //                     <td>${data.address}</td>
-    //                     <td class="d-flex justify-content-center align-items-center gap-3">
-    //                         <button id="edit" type="button" class="btn btn-secondary">Edit</button>
-    //                         <button id="del" type="button" class="btn btn-danger">Delete</button>
-    //                     </td>
-    //                 </tr>
-    //                 `
-    //             });
-    //             $('#t_body').html(data);
-    //         }
-    //     })
-    // })
+        $('#back').click(function(){
+            window.location.href = "{{ route('welcome') }}";
+        })
+
+        $('#download').click(function() {
+            window.location.href = "{{ route('data.download') }}";
+        })
+    })
 </script>
 </html>

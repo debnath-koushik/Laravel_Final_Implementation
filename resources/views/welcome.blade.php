@@ -45,7 +45,7 @@
         $('#view').on('click', function(e){
             e.preventDefault();
 
-            window.location.href = "{{ route('view') }}";
+            window.location.href = "{{ route('showdata') }}";
         })
     })
 </script>

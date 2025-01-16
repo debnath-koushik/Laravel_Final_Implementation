@@ -27,4 +27,5 @@ Route::get('/welcome', function () {
     return view('welcome');
 })->name('welcome')->middleware('auth');
 
-Route::get('/view', [DataController::class, 'showdata'])->name('view');
+Route::get('/showdata', [DataController::class, 'showdata'])->name('showdata');
+Route::get('/download', [DataController::class, 'download'])->name('data.download');
