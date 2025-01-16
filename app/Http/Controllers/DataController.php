@@ -19,7 +19,7 @@ class DataController extends Controller
     }
 
     public function download() {
-        $data = TableModel1::select('view_table.uname')->join('view_table2', 'view_table.phone_number','=','view_table2.phone_number')
+        $data = TableModel1::join('view_table2', 'view_table.phone_number','=','view_table2.phone_number')
                             ->select('view_table.uname', 'view_table.phone_number', 'view_table2.gmail', 'view_table2.address')
                             ->get()
                             ->toArray();
