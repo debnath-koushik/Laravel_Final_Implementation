@@ -30,7 +30,7 @@
             </tr>
           </thead>
           <tbody id="t_body">
-            @if($data->isEmpty())
+            {{-- @if($data->isEmpty())
                 <p>No data available.</p>
             @else
                 @foreach($data as $item)
@@ -45,7 +45,7 @@
                         </td>
                     </tr>
                 @endforeach
-            @endif
+            @endif --}}
           </tbody>
         </table>
       </div>
@@ -53,6 +53,34 @@
 </body>
 <script>
     $(document).ready(function() {
+
+        fetchdata();
+
+        function fetchdata() {
+            $.ajax({
+                url: 'showdata',
+                type: 'GET',
+                success: function(res){
+                    let data = '';
+
+                    res.forEach(ele => {
+                        data += `
+                            <tr align="center">
+                                <td>${ele.uname}</td>
+                                <td>${ele.phone_number}</td>
+                                <td>${ele.gmail}</td>
+                                <td>${ele.address}</td>
+                                <td class="d-flex justify-content-center align-items-center gap-3">
+                                    <button id="edit" type="button" class="btn btn-secondary">Edit</button>
+                                    <button id="del" type="button" class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                        `
+                    });
+                    $('#t_body').html(data);
+                }
+            });
+        }
 
         $('#back').click(function(){
             window.location.href = "{{ route('welcome') }}";
