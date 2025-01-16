@@ -20,6 +20,7 @@
         <div style="border-left: 2px solid gray; height: 40px;"></div>
         <button id="insert" type="button" class="btn btn-primary">Insert</button>
     </div>
+
 </body>
 <script>
     $(document).ready(function() {
@@ -40,6 +41,12 @@
                 }
             });
         });
+
+        $('#view').on('click', function(e){
+            e.preventDefault();
+
+            window.location.href = "{{ route('view') }}";
+        })
     })
 </script>
 </html>

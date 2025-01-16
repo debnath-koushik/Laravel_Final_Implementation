@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DataController;
 use App\Http\Controllers\LoginController;
 
 /*
@@ -25,3 +26,5 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/welcome', function () {
     return view('welcome');
 })->name('welcome')->middleware('auth');
+
+Route::get('/view', [DataController::class, 'showdata'])->name('view');
