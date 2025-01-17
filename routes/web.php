@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DataController;
 use App\Http\Controllers\LoginController;
 
 /*
@@ -25,3 +26,17 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/welcome', function () {
     return view('welcome');
 })->name('welcome')->middleware('auth');
+
+
+Route::get('/view', function () {
+    return view('view');
+})->name('view');
+
+Route::get('/showdata', [DataController::class, 'showdata'])->name('showdata');
+Route::get('/download', [DataController::class, 'download'])->name('data.download');
+
+Route::get('/fileupload', function () {
+    return view('fileupload');
+})->name('fileupload');
+
+Route::post('/upload', [DataController::class, 'upload'])->name('upload');

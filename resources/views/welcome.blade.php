@@ -14,7 +14,13 @@
     <div class="d-flex justify-content-end align-items-center m-3">
         <button id="logout" type="button" class="btn btn-danger">Logout</button>
     </div>
-    <h1>Hiii!!! Welcome to our Website</h1>
+    <h1 class="m-3">Hiii!!! Welcome to our Website</h1>
+    <div class="d-flex justify-content-start align-items-center m-3 gap-3">
+        <button id="view" type="button" class="btn btn-primary">View</button>
+        <div style="border-left: 2px solid gray; height: 40px;"></div>
+        <button id="insert" type="button" class="btn btn-primary">Insert</button>
+    </div>
+
 </body>
 <script>
     $(document).ready(function() {
@@ -35,6 +41,16 @@
                 }
             });
         });
+
+        $('#view').on('click', function(e){
+            e.preventDefault();
+            window.location.href = "{{ route('view') }}";
+        })
+
+        $('#insert').on('click', function(e){
+            e.preventDefault();
+            window.location.href = "{{ route('fileupload') }}";
+        })
     })
 </script>
 </html>
