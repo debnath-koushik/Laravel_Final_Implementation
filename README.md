@@ -67,7 +67,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Work Details of the Repositry
 
-- **[Author: Koushik Debnathll]**
-- **[Date: 1-15-2025]**
+- **Author: Koushik Debnathll**
+- **Date: 1-15-2025**
 
     Today work on login and logout functionality ussing auth and middleware
